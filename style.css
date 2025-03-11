@@ -1,0 +1,673 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #F2F0EF;
+    padding: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos do cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    color: black;
+    padding: 20px 40px;
+    margin-bottom: 1%;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: padding 0.3s ease, color 0.3s ease;
+   
+}
+
+header.header-scrolled {
+    padding: 5px 15px;
+}
+
+header.header-dark {
+    color: white;
+}
+
+header.header-dark nav ul li a {
+    color: white;
+}
+
+header.header-dark nav ul li a:hover {
+    text-decoration: underline;
+    color: #ddd;
+}
+
+header.header-dark .iconsh a img {
+    filter: brightness(0) invert(1);
+}
+
+.logo {
+    width: 170px;
+    height: auto;
+    transition: width 0.3s ease;
+}
+
+header.header-scrolled .logo {
+    width: 100px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin-left: 40px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: lighter;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+
+}
+
+.iconsh img {
+    width: 40px;
+    height: auto;
+    padding-right: 10px;
+    transition: width 0.3s ease;
+}
+
+header.header-scrolled .iconsh img {
+    width: 25px;
+}
+
+.iconsh a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Estilos das seções */
+section {
+    margin-bottom: 40px;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: auto auto;
+    gap: 15px;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+
+/* Estilos das divisões dentro da seção About */
+/* Estilos da seção About */
+.about {
+    margin-bottom: 40px;
+    border-top: 2px solid #000;
+}
+
+/* Estilos do header com a classe .info no canto direito */
+.about .info {
+    text-align: center;  /* Centraliza o texto dentro da div .info */
+    margin-top: 0px;
+}
+
+/* Estilo para o parágrafo dentro de .info */
+.about .info p {
+    font-size: 19.2px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.about-item {   
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* Estilos para o título */
+.about h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 80px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+/* Estilo para os parágrafos gerais dentro da seção */
+.about p {
+    width: 100%;
+    max-width: 1600px;
+    text-align: center;
+    font-size: 19.2px !important;
+    margin-bottom: 30px;
+}
+
+
+/* Estilos das divisões (usado em Main, Sobre e Contato) */
+.initial {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    background-color: #f4f4f4;
+    padding: 10px;
+    padding-top: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.initial img {
+    border: none;
+    margin: 15px;
+    margin-top: -20px;
+    width: 200px;
+    height: auto;
+    max-width: 100%;
+}
+
+.btw {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    padding: 10px; /* Aumenta o espaço interno */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    max-height: none; /* Remove a limitação de altura */
+    height: 100%; /* Faz o box ocupar todo o espaço disponível */
+    min-height: 100px; /* Define uma altura mínima maior */
+    width: 100%; /* Faz o box ser mais largo */
+}
+
+.black {
+    grid-column: 3 / 8; /* Expande a largura no grid */
+    grid-row: 1 / 3;
+    background-color: black;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    padding: 35px; /* Aumenta o espaçamento interno */
+    max-height: none; /* Remove limitação de altura */
+    height: 100%; /* Faz com que ocupe o espaço total disponível */
+    min-height: 400px; /* Define uma altura mínima maior */
+    width: 100%; /* Garante que ocupe toda a largura disponível */
+}
+
+.second {
+    display: none;
+}
+
+/* Estilos da seção Projetos (Lisa, com linha de cabeçalho) */
+#projects {
+    margin-bottom: 40px;
+}
+
+.header-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 25px 0;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.header-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+}
+
+.header-line h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.header-line p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    max-width: 400px;
+    text-align: right;
+    line-height: 1.4;
+}
+
+.projects-content {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+}
+
+.projects-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.projects-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.project-item {
+    margin-bottom: 40px;
+}
+
+.project-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.project-item p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* Estilos do Footer */
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px 40px;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.footer-icons img {
+    width: 30px;
+    height: auto;
+    margin-left: 10px;
+}
+
+.footer-icons a {
+    text-decoration: none;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .parent {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: auto auto auto;
+    }
+    .initial {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+    .btw {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        min-height: 250px; /* Ajuste para telas médias */
+    }
+    .black {
+        grid-column: 3 / 6;
+        grid-row: 1 / 3;
+        min-height: 450px; /* Ajuste para telas médias */
+    }
+    .second {
+        display: block;
+        grid-column: 1 / 6;
+        grid-row: 3 / 4;
+    }
+    footer {
+        padding: 15px 30px;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-icons {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .parent {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .initial, .btw, .black, .second {
+        width: 100%;
+        max-width: 750px;
+        margin: 0 auto;
+    }
+    .btw {
+        min-height: 200px; /* Ajuste para tablets */
+    }
+    .black {
+        min-height: 350px; /* Ajuste para tablets */
+    }
+    .header-line {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 0;
+    }
+    .header-line h2 {
+        font-size: 2.5rem;
+    }
+    .header-line p {
+        font-size: 0.9rem;
+        max-width: 100%;
+        text-align: left;
+        margin-top: 10px;
+    }
+    .projects-content {
+        padding: 20px;
+    }
+    footer {
+        padding: 15px 20px;
+    }
+    .footer-icons img {
+        width: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    header {
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+    }
+    header.header-scrolled {
+        padding: 5px 10px;
+    }
+    nav {
+        width: 100%;
+        margin: 15px 0;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 5px 15px;
+    }
+    .iconsh {
+        margin-top: 15px;
+    }
+    .initial, .btw, .black, .second {
+        padding: 20px;
+        min-height: 200px; /* Ajuste para telas médias */
+    }
+    .header-line h2 {
+        font-size: 2rem;
+    }
+    .header-line p {
+        font-size: 0.85rem;
+    }
+    .projects-content h2 {
+        font-size: 1.8rem;
+    }
+    .project-item h3 {
+        font-size: 1.3rem;
+    }
+    footer {
+        padding: 10px;
+    }
+    .footer-icons img {
+        width: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    .logo {
+        width: 120px;
+        padding-top: 1%;
+    }
+    header.header-scrolled .logo {
+        width: 80px;
+    }
+    nav ul li {
+        margin: 5px 10px;
+    }
+    .iconsh img {
+        width: 30px;
+    }
+    header.header-scrolled .iconsh img {
+        width: 20px;
+    }
+    .initial, .btw, .black, .second {
+        padding: 15px;
+        min-height: 150px; /* Ajuste para telas pequenas */
+    }
+    .initial img {
+        width: 150px;
+    }
+    .header-line h2 {
+        font-size: 1.8rem;
+    }
+    .header-line p {
+        font-size: 0.8rem;
+    }
+    .projects-content {
+        padding: 15px;
+    }
+    .projects-content h2 {
+        font-size: 1.5rem;
+    }
+    .project-item h3 {
+        font-size: 1.2rem;
+    }
+    footer {
+        padding: 10px;
+    }
+    .footer-icons img {
+        width: 18px;
+    }
+}
+
+ /* Seção Contato */
+ .contato {
+    padding: 80px 0;
+    background-color: #F2F0EF;
+    
+    font-family: 'Courier New', Courier, monospace;
+    
+  }
+
+  .contato .info-ctt {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    max-width: 400px;
+    text-align: right;
+    line-height: 1.4;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+  }
+  
+  .contato h2 {
+    font-size: 64px;
+    color: #080808;
+    margin-bottom: 20px;
+  }
+  
+  .contato p {
+    font-size: 1.2rem;
+    color: #777;
+    justify-content: center;
+    margin-top: 20px; /* Ajuste o valor conforme necessário */
+    margin-bottom: 20px; /* Ajuste o valor conforme necessário */
+  }
+  
+  .contato form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .form-group {
+    width: 100%;
+    margin-bottom: 20px;
+    
+  }
+  
+  .form-group label {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+    height: 150px;
+  }
+  
+ 
+  .contato button:hover {
+    background-color: #cac7c7;
+  }
+
+  form .botao-enviar{
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 5px;
+    width: 100px;
+    padding: 10px 15px;
+    background-color: #F2F0EF;
+    color: #2d2d2d;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;;
+    justify-content: center;
+  }
+
+  form .botao-enviar input{
+    width: 100px;
+    padding: 10px 15px;
+    background-color: #F2F0EF;
+    color: #2d2d2d;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;;
+  }
+
+  .botao-enviar input:hover{
+    background-color: #cfcecd; /* Muda a cor para um tom mais escuro */
+    transform: scale(1.05); /* Faz o botão crescer um pouco */
+    box-shadow: 0px 4px 8px #F2F0EF; /* Adiciona um sombreamento */
+  }
+
+  /* Estilo rodapé */
+
+  footer {
+    padding: 40px;
+    box-shadow: 0 0 40px 10px #F2F0EF;
+}
+
+footer .flex {
+    display: flex; /* Garante que a estrutura de flexbox será usada */
+    justify-content: space-between; /* Divide o espaço igualmente entre os itens */
+    align-items: center; /* Alinha verticalmente no centro */
+}
+
+footer .line-footer {
+    padding: 20px 0;
+}
+
+footer .line-footer p i {
+    color: #2d2d2d;
+    font-size: 22px;
+}
+
+footer .line-footer p a {
+    color: #F2F0EF;
+}
+
+.borda {
+    border-top: 2px solid #F2F0EF;
+}
+
+footer .logo-footer img {
+    width: 90px;
+    height: auto;
+    max-width: 100%;
+}
+
+.btn-social {
+    display: flex;
+    justify-content: flex-end; /* Alinha os botões à direita */
+    align-items: center; /* Alinha os botões no centro verticalmente */
+}
+
+.btn-social button {
+    width: 60px;
+    height: 60px;
+    background-color: rgb(255, 255, 255);
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 30px;
+    border-width: 0px;
+    margin: 0px 5px; /* Espaçamento entre os botões */
+    transition: 0.2s;
+}
+  
