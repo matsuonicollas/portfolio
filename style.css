@@ -11,6 +11,11 @@ body {
     padding: 10px;
 }
 
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -219,7 +224,8 @@ section {
     display: none;
 }
 
-/* Estilos da seção Projetos (Lisa, com linha de cabeçalho) */
+/* Estilos da seção Projetos */
+/* Estilos da seção Projetos */
 #projects {
     margin-bottom: 40px;
 }
@@ -270,28 +276,82 @@ section {
     text-align: center;
 }
 
-.projects-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
 .projects-content p {
     font-size: 1.2rem;
     margin-bottom: 30px;
 }
 
+/* Organiza as imagens lado a lado */
+.project-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
 .project-item {
+    flex: 0 0 40%;
+    max-width: 500px;
+    position: relative;
+    border: 3px solid black;
+    border-radius: 8px;
+    overflow: hidden;
     margin-bottom: 40px;
 }
 
-.project-item h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+.project-item a {
+    display: block; /* Faz o link ocupar o espaço da imagem */
+    width: 100%;
+    height: 100%;
 }
 
-.project-item p {
-    font-size: 1.2rem;
-    line-height: 1.5;
+.project-item img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    filter: blur(3px) grayscale(100%);
+    transition: filter 0.3s ease;
+    display: block;
+}
+
+.project-item:hover img {
+    filter: blur(0) grayscale(0);
+}
+
+.project-item h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-item:hover h3 {
+    opacity: 1;
+}
+
+/* Cursor de ponteiro pra indicar clicabilidade */
+.project-item:hover {
+    cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .project-gallery {
+        flex-direction: column;
+    }
+    .project-item {
+        flex: 0 0 80%;
+        max-width: 100%;
+    }
 }
 
 /* Estilos do Footer */
@@ -540,7 +600,7 @@ footer {
   
   .contato p {
     font-size: 1.2rem;
-    color: #777;
+    color: #000000;
     justify-content: center;
     margin-top: 20px; /* Ajuste o valor conforme necessário */
     margin-bottom: 20px; /* Ajuste o valor conforme necessário */
@@ -620,14 +680,25 @@ footer {
   /* Estilo rodapé */
 
   footer {
-    padding: 40px;
-    box-shadow: 0 0 40px 10px #F2F0EF;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px 40px;
+    margin-top: 40px;
+    width: 100vw;
+    max-width: 100%;
+    border-radius: 8px;
+  
+}
+
+.interface {
+    width: 100%;
+    max-width: none;
 }
 
 footer .flex {
-    display: flex; /* Garante que a estrutura de flexbox será usada */
-    justify-content: space-between; /* Divide o espaço igualmente entre os itens */
-    align-items: center; /* Alinha verticalmente no centro */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 footer .line-footer {
@@ -655,8 +726,8 @@ footer .logo-footer img {
 
 .btn-social {
     display: flex;
-    justify-content: flex-end; /* Alinha os botões à direita */
-    align-items: center; /* Alinha os botões no centro verticalmente */
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .btn-social button {
@@ -667,7 +738,7 @@ footer .logo-footer img {
     cursor: pointer;
     border-radius: 30px;
     border-width: 0px;
-    margin: 0px 5px; /* Espaçamento entre os botões */
+    margin: 0px 5px;
     transition: 0.2s;
 }
   

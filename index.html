@@ -35,7 +35,7 @@
             </div>
             <div class="btw">
                
-                <h3>Ideias</h3><br>
+                <h3>Meus textos:</h3><br>
                 <p>📒 Como eu aprendi inglês</p>
                 <p>🏎️ Formula SAE</p>
                 <p> Conhecer mais...</p><br>
@@ -51,16 +51,25 @@
     <section id="projects">
         <div class="header-line">
             <h2>Projects</h2>
-            <p>Aqui estão alguns dos meus trabalhos recentes. Explore e veja o que posso fazer por você.</p>
+            <p>Aqui estão alguns dos meus trabalhos recentes.</p>
         </div>
         <div class="projects-content">
-            <div class="project-item">
-                <h3>Projeto 1</h3>
-                <p>Em breve uma galeria com imagens e explicações sobre os projetos</p>
-            </div>
-            <div class="project-item">
-                <h3>Projeto 2</h3>
-                <p>Vai ficar dahora</p>
+            <div class="project-gallery">
+                <div class="project-item">
+                    <a href="https://ticket-two-lilac.vercel.app/">
+                    <img src="imgs/p1.png" alt="Projeto 1">
+            
+                    <h3>Projeto 1</h3>
+                </a>
+                </div>
+                <div class="project-item">
+                    <a href="https://calculator-app-beta-lyart.vercel.app/">
+                    <img src="imgs/p2.png" alt="Projeto 2">
+                
+                    <h3>Projeto 2</h3>
+
+                </a>
+                </div>
             </div>
         </div>
     </section>
@@ -89,24 +98,31 @@
           <div class="header-line">
             <h2>CONTACT</h2>
             <p>
-            Got a question or proposal, or just want to say hello? Go ahead.
+                Tem uma pergunta, uma proposta ou só quer dizer oi? Mande um email.
           </p></div>
           
-          <form>
+          <form id="contact-form" action="https://formsubmit.co/matsuonicollas@gmail.com" method="POST">
             <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" placeholder="Enter your name" />
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required />
             </div>
             <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" placeholder="Enter your email address" />
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required />
             </div>
             <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" placeholder="Hi, I think we need a design system for our products at Company X. How soon can you hop on to discuss this?"></textarea>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Hi, I think we need a design system for our products at Company X. How soon can you hop on to discuss this?" required></textarea>
             </div>
+            
+            <!-- Campo anti-spam (honeypot) -->
+            <input type="text" name="_honey" style="display:none">
+            
+            <!-- Desativar o captcha (opcional) -->
+            <input type="hidden" name="_captcha" value="false">
+            
             <button type="submit" class="botao-enviar">Enviar</button>
-          </form>
+        </form>
         </div>
       </section>
 

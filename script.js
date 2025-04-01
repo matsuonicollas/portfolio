@@ -1,10 +1,10 @@
-// Função para ajustar o header ao rolar
+// rolagem
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
     const headerHeight = header.offsetHeight;
     const scrollPosition = window.scrollY + headerHeight;
 
-    // Verifica se o header está sobre uma seção com fundo preto (.black)
+    // (.black)
     const blackSections = document.querySelectorAll('.black');
     let isOverDark = false;
 
@@ -12,7 +12,7 @@ window.addEventListener('scroll', function() {
         const sectionTop = section.getBoundingClientRect().top + window.scrollY;
         const sectionBottom = sectionTop + section.offsetHeight;
 
-        // Ajuste para considerar a altura do header
+        
         if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
             isOverDark = true;
         }
@@ -27,6 +27,7 @@ window.addEventListener('scroll', function() {
 
     // Reduz o tamanho do header ao rolar
     if (window.scrollY > 50) {
+        
         header.classList.add('header-scrolled');
     } else {
         header.classList.remove('header-scrolled');
@@ -35,3 +36,4 @@ window.addEventListener('scroll', function() {
 
 // Executa uma vez ao carregar para corrigir o estado inicial
 window.dispatchEvent(new Event('scroll'));
+
